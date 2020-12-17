@@ -13,7 +13,7 @@ const Navbar = () => {
             <AppBar position="fixed" className={classes.appbar} color="inherit">
                 <Toolbar>
                     <Typography variant="h6" className={classes.title} color="inherit" >
-                        <img src={logo} alt="Commerce.js" className={ classes.image }/>
+                        <img src={logo} alt="Commerce.js" height="60px" className={ classes.image }/>
                         Commerce.js
                     </Typography>
                     <div className={classes.grow} />
