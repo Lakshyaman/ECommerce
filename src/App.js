@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce'
 // import Products from './components/Products/Products';
 // import Navbar from './components/Navbar/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Products, Navbar, Cart } from './components';
 
@@ -37,9 +38,17 @@ const App = ({object}) => {
 
     return (
         <div>
-            <Navbar totalItems={cart.total_items}/>
-            {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
-            <Cart cart={cart}/>
+            <Router>
+                <Navbar totalItems={cart.total_items}/>
+                <Switch>
+                    <Route exact path="/">
+                        <Products products={products} onAddToCart={handleAddToCart} />
+                    </Route>
+                    <Route exact path="/cart">
+                        <Cart cart={cart}/>
+                    </Route>
+                </Switch>
+            </Router>
         </div>
     )
 }
